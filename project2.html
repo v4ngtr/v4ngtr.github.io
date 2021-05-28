@@ -1,0 +1,121 @@
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Sigmar+One&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Rubik:wght@300&display=swap');
+    /* font */
+    :root{
+        --color-green: #37af65;
+    }
+    html{
+        background-image: linear-gradient(
+      115deg,
+      rgba(58, 58, 158, 0.1),
+      rgba(136, 136, 206, 0.2)
+    ), url("https://i.pinimg.com/originals/af/7c/ed/af7ceda168b649e003e20f510bcf8b4b.jpg");
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        /* font-size:18px; */
+        font-family: "rubik";
+    }
+    #title{
+        text-align: center;
+        font-size: 40px;
+        margin-bottom: 0.25rem;
+        margin-top: 1.5rem;
+        font-family: "Sigmar One", serif;
+        color: white;
+    }
+    #description{
+        text-align: center;
+        margin-top: 0.25rem !important;
+        margin-bottom: 1.5rem !important;
+        font-size: 18px;
+        font-style: italic;
+    }
+
+    #survey-form{
+        border-radius: 1rem;
+        margin: auto;
+        width: 500px;
+        padding: 2em;
+        background-color:rgba(31, 43, 38, 0.8);
+        font-size: 18px;
+    }
+    p, label {
+        color: white;
+        margin-bottom: 0.25rem;
+        margin-top: 1.5rem;
+        font-size: 22px;
+    }
+    .box{
+        width: 100%;
+        height: 2.5rem;
+        resize: vertical;
+        border-radius: 0.2rem;
+        padding: 0.625rem;
+        font-size: 18px;
+        border: 1px solid #ced4da;
+    }
+    #name{
+        margin-top: 0.5rem;
+    }
+    textarea{
+        height: 5rem !important;
+    }
+    .submit-button{
+        background: var(--color-green);
+        margin-top: 2rem;
+        cursor: pointer;
+        border: 0px;
+    }
+    
+</style>
+
+<h1 id = "title">LOR player survey form</h1>
+<p id="description">Thank you for taking the time to help us</p>
+
+<form id="survey-form">
+    <p id="name">Name </p>
+    <input class="box" type="text" required placeholder="Enter your name" name="name"> 
+    <p id="email">Email </p>
+    <input class="box" type="email" required placeholder="Enter your email" name="email">
+    <p>Age</p>
+    <input class="box" id="number" type="number" required placeholder="Enter your age" min = 1 max = 100 name="age">
+    <p>Rank</p>
+
+    <select class="box" id="dropdown" required name="rank"> 
+        <option disabled selected>Select your current rank</option>
+        <option value="bronze">Bronze</option>
+        <option value="silver">Silver</option>
+        <option value="gold">Gold</option>
+        <option value="platinum">Platinum</option>
+        <option value="diamon">Diamon</option>
+        <option value="master">Master</option>
+        <option value="other">I don't play ranked</option>
+    </select>
+
+    <div id="purpose">
+        <p>What is your purpose of playing LOR?</p>
+        <input type="radio" checked name="purpose" value="fun"> 
+        <label for="fun"> For fun</label> <br>
+        <input type="radio" name="purpose" value="competitive">
+        <label for="competitive">For competitive</label>
+    </div>
+
+    <div id="suggest">
+        <p>What would you like us to improve gameplay?</p>
+        <label> <input name="prefer" value="buff-fiora" type="checkbox"> Buff Fiora again</label> <br>
+        <label> <input name="prefer" value="nerf-azir-ire" type="checkbox"> Nerf Azir Ire</label> <br>
+        <label> <input name="prefer" value="nerf-thresh-nasus" type="checkbox"> Nerf Thresh Nasus</label><br>
+        <label> <input name="prefer" value="other" type="checkbox">Other</label>
+    </div>
+
+    <div  name="other-suggest">
+        <p>Other suggestions for us to improve gameplay?</p>
+        <textarea class="box" name="comment" placeholder="Enter your suggestions here"></textarea>
+    </div>
+    
+    <button type="submit" id="submit" class="submit-button box">
+        Submit
+    </button>
+</form>
